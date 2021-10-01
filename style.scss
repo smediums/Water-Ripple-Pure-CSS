@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #f1f2f4;
+    overflow: hidden;
+
+    .container{
+        width: 310px;
+        height: 310px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .ripple{
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background: transparent;
+            border: 26px solid #f1f2f4;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 6px 6px 18px 0 #090e1d33,
+            6px 6px 18px 0 #3754aa33 inset,
+            -6px -6px 18px #fff,
+            -6px -6px 18px #fff inset,
+            6px 6px 13px #fff inset;
+            filter: blur(13px);
+            animation: ripple 4s infinite ease-in;
+
+            @keyframes ripple {
+                0%{
+                    transform: translate(-50%,-50%) scale(0);
+                }
+                100%{
+                    transform: translate(-50%,-50%) scale(1.5);
+                    opacity: 0;
+                }
+                5%{
+                    opacity: 1;
+                }
+            }
+        }
+        .ripple2{
+            width: 150%;
+            height: 150%;
+        }
+        .ripple3{
+            width: 200%;
+            height: 200%;
+        }
+    }
+}
